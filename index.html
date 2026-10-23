@@ -6,6 +6,9 @@
   <title>SQLVault Gateway · Accès sécurisé aux bases de données bancaires</title>
   <meta name="description" content="SQLVault Gateway contrôle et trace chaque accès aux bases de données de la banque : données sensibles masquées, double validation des modifications, rapports automatiques et journal d'audit infalsifiable. Oracle, SQL Server, PostgreSQL, MySQL, MariaDB.">
   <link rel="canonical" href="https://sqlvaultgateway.github.io/">
+  <link rel="alternate" hreflang="fr" href="https://sqlvaultgateway.github.io/">
+  <link rel="alternate" hreflang="en" href="https://sqlvaultgateway.github.io/en/">
+  <link rel="alternate" hreflang="x-default" href="https://sqlvaultgateway.github.io/">
   <link rel="icon" href="favicon.ico">
   <meta name="theme-color" content="#0b1f3a">
   <meta property="og:type" content="website">
@@ -20,7 +23,7 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"SQLVault Gateway","applicationCategory":"SecurityApplication",
    "operatingSystem":"Linux (Docker)","description":"Passerelle d'accès sécurisé aux bases de données bancaires : masquage, double validation, rapports planifiés, journal d'audit chaîné.",
-   "publisher":{"@type":"Organization","name":"DEF TECH 2.0","email":"mbodjiousseynou94@gmail.com"},"url":"https://sqlvaultgateway.github.io/","inLanguage":"fr"}
+   "publisher":{"@type":"Organization","name":"DEF TECH 2.0","email":"sqlvaultgateway@gmail.com"},"url":"https://sqlvaultgateway.github.io/","inLanguage":"fr"}
   </script>
 </head>
 <body>
@@ -31,12 +34,14 @@
     <a class="brand" href="#haut" aria-label="SQLVault Gateway, accueil"><img src="assets/img/logo-primaire.png" alt="" width="34" height="34"><span>SQLVault Gateway</span></a>
     <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
     <nav id="menu" aria-label="Navigation principale">
+      <a href="#architecture">Principe</a>
       <a href="#fonctions">Fonctionnalités</a>
       <a href="#fonctionnement">Fonctionnement</a>
       <a href="#demo">Démo</a>
       <a href="#securite">Sécurité</a>
       <a href="#documents">Documents</a>
       <a href="#faq">FAQ</a>
+      <a class="lang" href="en/" hreflang="en" lang="en">EN</a>
       <a class="btn btn-sm" href="#contact">Demander un pilote</a>
     </nav>
   </div>
@@ -63,7 +68,7 @@
     </div>
     <figure class="shot hero-shot">
       <div class="shot-bar"><i></i><i></i><i></i><span>sqlvault.votre-banque.sn</span></div>
-      <img src="assets/img/05-editeur-resultat-masque.jpg" alt="Éditeur SQL de SQLVault Gateway : IBAN et soldes masqués pour une analyste" width="1600" height="900">
+      <img src="assets/img/05-editeur-resultat-masque.jpg" alt="Éditeur SQL de SQLVault Gateway : IBAN et soldes masqués pour une analyste" width="1200" height="750">
     </figure>
   </div>
 </section>
@@ -104,11 +109,43 @@
   </div>
 </section>
 
+<!-- Avant / après -->
+<section class="section arch" id="architecture">
+  <div class="wrap">
+    <p class="kicker">Avant / après</p>
+    <h2>Un seul passage contrôlé entre vos équipes et vos bases</h2>
+    <div class="arch-grid">
+      <figure class="arch-panel arch-before">
+        <figcaption><strong>Aujourd'hui</strong><span>Chaque poste se connecte directement à chaque base de production.</span></figcaption>
+        <svg viewBox="0 0 560 360" role="img" aria-label="Six postes de travail reliés directement aux quatre bases de production, par une multitude de connexions croisées">
+          <g class="lines-bad"><path d="M70 40 C 250 40, 250 60, 430 60"/><path d="M70 40 C 250 40, 250 140, 430 140"/><path d="M70 40 C 250 40, 250 220, 430 220"/><path d="M70 40 C 250 40, 250 300, 430 300"/><path d="M70 90 C 250 90, 250 60, 430 60"/><path d="M70 90 C 250 90, 250 140, 430 140"/><path d="M70 90 C 250 90, 250 220, 430 220"/><path d="M70 90 C 250 90, 250 300, 430 300"/><path d="M70 140 C 250 140, 250 60, 430 60"/><path d="M70 140 C 250 140, 250 140, 430 140"/><path d="M70 140 C 250 140, 250 220, 430 220"/><path d="M70 140 C 250 140, 250 300, 430 300"/><path d="M70 190 C 250 190, 250 60, 430 60"/><path d="M70 190 C 250 190, 250 140, 430 140"/><path d="M70 190 C 250 190, 250 220, 430 220"/><path d="M70 190 C 250 190, 250 300, 430 300"/><path d="M70 240 C 250 240, 250 60, 430 60"/><path d="M70 240 C 250 240, 250 140, 430 140"/><path d="M70 240 C 250 240, 250 220, 430 220"/><path d="M70 240 C 250 240, 250 300, 430 300"/><path d="M70 290 C 250 290, 250 60, 430 60"/><path d="M70 290 C 250 290, 250 140, 430 140"/><path d="M70 290 C 250 290, 250 220, 430 220"/><path d="M70 290 C 250 290, 250 300, 430 300"/></g>
+          <g class="post"><rect x="14" y="26" width="56" height="28" rx="5"/><rect x="24" y="32" width="36" height="14" rx="2" class="screen"/></g><g class="post"><rect x="14" y="76" width="56" height="28" rx="5"/><rect x="24" y="82" width="36" height="14" rx="2" class="screen"/></g><g class="post"><rect x="14" y="126" width="56" height="28" rx="5"/><rect x="24" y="132" width="36" height="14" rx="2" class="screen"/></g><g class="post"><rect x="14" y="176" width="56" height="28" rx="5"/><rect x="24" y="182" width="36" height="14" rx="2" class="screen"/></g><g class="post"><rect x="14" y="226" width="56" height="28" rx="5"/><rect x="24" y="232" width="36" height="14" rx="2" class="screen"/></g><g class="post"><rect x="14" y="276" width="56" height="28" rx="5"/><rect x="24" y="282" width="36" height="14" rx="2" class="screen"/></g>
+          <g class="db"><rect x="430" y="36" width="118" height="48" rx="10"/><image href="assets/db/oracle.svg" x="440" y="46" width="28" height="28"/><text x="474" y="65">Oracle</text></g><g class="db"><rect x="430" y="116" width="118" height="48" rx="10"/><image href="assets/db/mssql.svg" x="440" y="126" width="28" height="28"/><text x="474" y="145">SQL Server</text></g><g class="db"><rect x="430" y="196" width="118" height="48" rx="10"/><image href="assets/db/postgresql.svg" x="440" y="206" width="28" height="28"/><text x="474" y="225">PostgreSQL</text></g><g class="db"><rect x="430" y="276" width="118" height="48" rx="10"/><image href="assets/db/mysql.svg" x="440" y="286" width="28" height="28"/><text x="474" y="305">MySQL</text></g>
+          <text x="280" y="350" text-anchor="middle" class="warn">Qui a lu quoi ? Qui a modifié quoi ?</text>
+        </svg>
+      </figure>
+      <figure class="arch-panel arch-after">
+        <figcaption><strong>Avec SQLVault Gateway</strong><span>Toutes les requêtes passent par un point unique qui analyse, masque, fait valider et trace.</span></figcaption>
+        <svg viewBox="0 0 560 360" role="img" aria-label="Six postes de travail reliés à SQLVault Gateway, seul point d'accès aux quatre bases de production">
+          <g class="lines-in"><path d="M70 40 C 140 40, 150 180, 200 180"/><path d="M70 90 C 140 90, 150 180, 200 180"/><path d="M70 140 C 140 140, 150 180, 200 180"/><path d="M70 190 C 140 190, 150 180, 200 180"/><path d="M70 240 C 140 240, 150 180, 200 180"/><path d="M70 290 C 140 290, 150 180, 200 180"/></g>
+          <g class="lines-out"><path d="M350 180 C 390 180, 395 60, 430 60"/><path d="M350 180 C 390 180, 395 140, 430 140"/><path d="M350 180 C 390 180, 395 220, 430 220"/><path d="M350 180 C 390 180, 395 300, 430 300"/></g>
+          <g class="post"><rect x="14" y="26" width="56" height="28" rx="5"/><rect x="24" y="32" width="36" height="14" rx="2" class="screen"/></g><g class="post"><rect x="14" y="76" width="56" height="28" rx="5"/><rect x="24" y="82" width="36" height="14" rx="2" class="screen"/></g><g class="post"><rect x="14" y="126" width="56" height="28" rx="5"/><rect x="24" y="132" width="36" height="14" rx="2" class="screen"/></g><g class="post"><rect x="14" y="176" width="56" height="28" rx="5"/><rect x="24" y="182" width="36" height="14" rx="2" class="screen"/></g><g class="post"><rect x="14" y="226" width="56" height="28" rx="5"/><rect x="24" y="232" width="36" height="14" rx="2" class="screen"/></g><g class="post"><rect x="14" y="276" width="56" height="28" rx="5"/><rect x="24" y="282" width="36" height="14" rx="2" class="screen"/></g>
+          <g class="db"><rect x="430" y="36" width="118" height="48" rx="10"/><image href="assets/db/oracle.svg" x="440" y="46" width="28" height="28"/><text x="474" y="65">Oracle</text></g><g class="db"><rect x="430" y="116" width="118" height="48" rx="10"/><image href="assets/db/mssql.svg" x="440" y="126" width="28" height="28"/><text x="474" y="145">SQL Server</text></g><g class="db"><rect x="430" y="196" width="118" height="48" rx="10"/><image href="assets/db/postgresql.svg" x="440" y="206" width="28" height="28"/><text x="474" y="225">PostgreSQL</text></g><g class="db"><rect x="430" y="276" width="118" height="48" rx="10"/><image href="assets/db/mysql.svg" x="440" y="286" width="28" height="28"/><text x="474" y="305">MySQL</text></g>
+          <g class="gw"><rect x="200" y="105" width="150" height="150" rx="16"/><image href="assets/img/logo-primaire.png" x="257" y="117" width="36" height="36"/>
+            <text x="275" y="172" text-anchor="middle" class="gw-name">SQLVault Gateway</text>
+            <text x="275" y="194" text-anchor="middle" class="gw-step">1 · Analyse</text><text x="275" y="211" text-anchor="middle" class="gw-step">2 · Décision</text>
+            <text x="275" y="228" text-anchor="middle" class="gw-step">3 · Masquage</text><text x="275" y="245" text-anchor="middle" class="gw-step">4 · Traçabilité</text></g>
+        </svg>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- Fonctionnalités -->
 <section class="section alt" id="fonctions">
   <div class="wrap">
     <p class="kicker">La solution</p>
-    <h2>Cinq garanties, dans un seul outil</h2>
+    <h2>Six garanties, dans un seul outil</h2>
     <div class="features">
       <article class="feature">
         <span class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
@@ -181,12 +218,10 @@
     </div>
     <h3 class="gal-title">Quelques écrans</h3>
     <div class="gallery">
-      <figure><button data-full="assets/img/19-examen-demande.jpg"><img loading="lazy" src="assets/img/19-examen-demande.jpg" alt="Examen d'une demande de modification par un valideur" width="1600" height="900"></button><figcaption>Validation à quatre yeux d'une modification</figcaption></figure>
-      <figure><button data-full="assets/img/11-requete-bloquee.jpg"><img loading="lazy" src="assets/img/11-requete-bloquee.jpg" alt="Suppression de table refusée par la politique de sécurité" width="1600" height="900"></button><figcaption>Suppression de table refusée avant d'atteindre la base</figcaption></figure>
-      <figure><button data-full="assets/img/26-journal-audit.jpg"><img loading="lazy" src="assets/img/26-journal-audit.jpg" alt="Journal d'audit vu par une auditrice" width="1600" height="900"></button><figcaption>Journal d'audit : qui, quoi, quand, depuis quel poste</figcaption></figure>
-      <figure><button data-full="assets/img/27-integrite.jpg"><img loading="lazy" src="assets/img/27-integrite.jpg" alt="Vérification d'intégrité du journal d'audit" width="1600" height="900"></button><figcaption>Vérification d'intégrité du journal</figcaption></figure>
-      <figure><button data-full="assets/img/21-rapport-formulaire.jpg"><img loading="lazy" src="assets/img/21-rapport-formulaire.jpg" alt="Programmation d'un rapport avec aperçu masqué" width="1600" height="900"></button><figcaption>Rapport planifié, aperçu déjà masqué</figcaption></figure>
-      <figure><button data-full="assets/img/12c-sqlserver-monetique.jpg"><img loading="lazy" src="assets/img/12c-sqlserver-monetique.jpg" alt="Numéros de carte masqués sur SQL Server" width="1600" height="900"></button><figcaption>Numéros de carte masqués (PCI DSS)</figcaption></figure>
+      <figure><button data-full="assets/img/19-examen-demande.jpg"><img loading="lazy" src="assets/img/19-examen-demande.jpg" alt="Examen d'une demande de modification par un valideur" width="1100" height="688"></button><figcaption>Validation à quatre yeux d'une modification</figcaption></figure>
+      <figure><button data-full="assets/img/11-requete-bloquee.jpg"><img loading="lazy" src="assets/img/11-requete-bloquee.jpg" alt="Suppression de table refusée par la politique de sécurité" width="1100" height="688"></button><figcaption>Suppression de table refusée avant d'atteindre la base</figcaption></figure>
+      <figure><button data-full="assets/img/26-journal-audit.jpg"><img loading="lazy" src="assets/img/26-journal-audit.jpg" alt="Journal d'audit vu par une auditrice" width="1100" height="688"></button><figcaption>Journal d'audit : qui, quoi, quand, depuis quel poste</figcaption></figure>
+      <figure><button data-full="assets/img/12c-sqlserver-monetique.jpg"><img loading="lazy" src="assets/img/12c-sqlserver-monetique.jpg" alt="Numéros de carte masqués sur SQL Server" width="1100" height="688"></button><figcaption>Numéros de carte masqués (PCI DSS)</figcaption></figure>
     </div>
   </div>
 </section>
@@ -248,8 +283,8 @@
     <div class="docs">
       <a class="doc" href="assets/docs/SQLVault-Gateway-Fiche-produit.pdf"><span class="pdf">PDF</span><strong>Fiche produit</strong><small>2 pages · l'essentiel en un coup d'œil</small></a>
       <a class="doc" href="assets/docs/SQLVault-Gateway-Note-DSI-RSSI.pdf"><span class="pdf">PDF</span><strong>Note de déploiement DSI / RSSI</strong><small>7 pages · comptes, réseau, postes, audit</small></a>
-      <a class="doc doc-ask" href="mailto:mbodjiousseynou94@gmail.com?subject=Demande%20du%20guide%20utilisateur%20SQLVault%20Gateway"><span class="pdf">Sur demande</span><strong>Guide utilisateur</strong><small>34 pages · chaque écran, illustré · envoyé aux établissements intéressés</small></a>
-      <a class="doc doc-ask" href="mailto:mbodjiousseynou94@gmail.com?subject=Demande%20du%20document%20technique%20SQLVault%20Gateway"><span class="pdf">NDA</span><strong>Document technique de référence</strong><small>Sur demande, sous accord de confidentialité</small></a>
+      <a class="doc doc-ask" href="mailto:sqlvaultgateway@gmail.com?subject=Demande%20du%20guide%20utilisateur%20SQLVault%20Gateway"><span class="pdf">Sur demande</span><strong>Guide utilisateur</strong><small>34 pages · chaque écran, illustré · envoyé aux établissements intéressés</small></a>
+      <a class="doc doc-ask" href="mailto:sqlvaultgateway@gmail.com?subject=Demande%20du%20document%20technique%20SQLVault%20Gateway"><span class="pdf">NDA</span><strong>Document technique de référence</strong><small>Sur demande, sous accord de confidentialité</small></a>
     </div>
   </div>
 </section>
@@ -276,9 +311,9 @@
       <p>Démonstration en ligne de 30 minutes ou pilote de 4 semaines sur votre propre environnement : écrivez-nous, nous vous répondons rapidement.</p>
     </div>
     <div class="contact-box">
-      <a class="btn btn-light" href="mailto:mbodjiousseynou94@gmail.com?subject=Demande%20de%20d%C3%A9monstration%20SQLVault%20Gateway">Demander une démonstration</a>
-      <a class="mail" href="mailto:mbodjiousseynou94@gmail.com">mbodjiousseynou94@gmail.com</a>
-      <span>Ousseynou MBODJI, CTO · DEF TECH 2.0 · Sénégal</span>
+      <a class="btn btn-light" href="mailto:sqlvaultgateway@gmail.com?subject=Demande%20de%20d%C3%A9monstration%20SQLVault%20Gateway">Demander une démonstration</a>
+      <a class="mail" href="mailto:sqlvaultgateway@gmail.com">sqlvaultgateway@gmail.com</a>
+      <span>L'équipe SQLVault Gateway · DEF TECH 2.0 · Sénégal</span>
     </div>
   </div>
 </section>

@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SQLVault Gateway · Secure access to banking databases</title>
+  <meta name="description" content="SQLVault Gateway controls and records every access to a bank's databases: sensitive data masked, every change approved by a second person, automated reports and a tamper-evident audit log. Oracle, SQL Server, PostgreSQL, MySQL, MariaDB.">
+  <link rel="canonical" href="https://sqlvaultgateway.github.io/en/">
+  <link rel="alternate" hreflang="fr" href="https://sqlvaultgateway.github.io/">
+  <link rel="alternate" hreflang="en" href="https://sqlvaultgateway.github.io/en/">
+  <link rel="alternate" hreflang="x-default" href="https://sqlvaultgateway.github.io/">
+  <link rel="icon" href="../favicon.ico">
+  <meta name="theme-color" content="#0b1f3a">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="SQLVault Gateway">
+  <meta property="og:title" content="SQLVault Gateway · Who accessed your customers' data yesterday?">
+  <meta property="og:description" content="Sensitive data masking, four-eyes approval, automated reports and a tamper-evident audit log, for every database in the bank.">
+  <meta property="og:url" content="https://sqlvaultgateway.github.io/en/">
+  <meta property="og:image" content="https://sqlvaultgateway.github.io/assets/img/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"SQLVault Gateway","applicationCategory":"SecurityApplication",
+   "operatingSystem":"Linux (Docker)","description":"Secure access gateway for banking databases: masking, dual approval, scheduled reports, chained audit log.",
+   "publisher":{"@type":"Organization","name":"DEF TECH 2.0","email":"sqlvaultgateway@gmail.com"},"url":"https://sqlvaultgateway.github.io/en/","inLanguage":"en"}
+  </script>
+</head>
+<body>
+<a class="skip" href="#contenu">Skip to content</a>
+
+<header class="nav" id="haut">
+  <div class="wrap nav-in">
+    <a class="brand" href="#haut" aria-label="SQLVault Gateway, home"><img src="../assets/img/logo-primaire.png" alt="" width="34" height="34"><span>SQLVault Gateway</span></a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    <nav id="menu" aria-label="Main navigation">
+      <a href="#architecture">How it works</a>
+      <a href="#fonctions">Features</a>
+      <a href="#fonctionnement">Request flow</a>
+      <a href="#demo">Demo</a>
+      <a href="#securite">Security</a>
+      <a href="#documents">Documents</a>
+      <a href="#faq">FAQ</a>
+      <a class="lang" href="../" hreflang="fr" lang="fr">FR</a>
+      <a class="btn btn-sm" href="#contact">Request a pilot</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+
+<!-- Accroche -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-text">
+      <p class="kicker">Secure access to banking databases</p>
+      <h1>Who accessed your customers’ data yesterday?</h1>
+      <p class="lead">SQLVault Gateway is the single, controlled path between your teams and the bank's databases. Everyone sees only what they need, no change goes through without a second approval, and every access leaves a trace that cannot be erased.</p>
+      <div class="cta">
+        <a class="btn" href="#contact">Request a 4-week pilot</a>
+        <a class="btn btn-ghost" href="#demo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch the video (1 min 38, in French)</a>
+      </div>
+      <ul class="hero-points">
+        <li>Nothing to install on workstations</li>
+        <li>Hosted in your own infrastructure</li>
+        <li>No data leaves the bank</li>
+      </ul>
+    </div>
+    <figure class="shot hero-shot">
+      <div class="shot-bar"><i></i><i></i><i></i><span>sqlvault.your-bank.com</span></div>
+      <img src="../assets/img/05-editeur-resultat-masque.jpg" alt="SQLVault Gateway SQL editor: IBAN and balances masked for an analyst" width="1200" height="750">
+    </figure>
+  </div>
+</section>
+
+<!-- Moteurs -->
+<section class="engines" aria-label="Supported databases">
+  <div class="wrap engines-in">
+    <p>Works with your databases as they are</p>
+    <ul>
+      <li><img src="../assets/db/oracle.svg" alt="" width="40" height="40">Oracle</li>
+      <li><img src="../assets/db/mssql.svg" alt="" width="40" height="40">SQL Server</li>
+      <li><img src="../assets/db/postgresql.svg" alt="" width="40" height="40">PostgreSQL</li>
+      <li><img src="../assets/db/mysql.svg" alt="" width="40" height="40">MySQL</li>
+      <li><img src="../assets/db/mariadb.svg" alt="" width="40" height="40">MariaDB</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Problème -->
+<section class="section" id="probleme">
+  <div class="wrap">
+    <p class="kicker">The problem</p>
+    <h2>Customer data is a bank's most valuable asset. Access to it is often the least controlled.</h2>
+    <div class="grid3">
+      <article class="card">
+        <h3>Direct access to production</h3>
+        <p>Analysts, developers and contractors connect to databases with tools installed on their workstations. Everyone sees everything, including account and card numbers.</p>
+      </article>
+      <article class="card">
+        <h3>Unchecked changes</h3>
+        <p>One urgent fix, one missing condition, and thousands of production rows are changed without anyone having approved it.</p>
+      </article>
+      <article class="card">
+        <h3>Evidence that is hard to produce</h3>
+        <p>During an audit or an inspection, it takes a long time, if it is possible at all, to say for certain who accessed what, when and from which workstation.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Avant / après -->
+<section class="section arch" id="architecture">
+  <div class="wrap">
+    <p class="kicker">Before / after</p>
+    <h2>One controlled path between your teams and your databases</h2>
+    <div class="arch-grid">
+      <figure class="arch-panel arch-before">
+        <figcaption><strong>Today</strong><span>Every workstation connects directly to every production database.</span></figcaption>
+        <svg viewBox="0 0 560 360" role="img" aria-label="Six workstations connected directly to the four production databases through a tangle of crossing connections">
+          <g class="lines-bad"><path d="M70 40 C 250 40, 250 60, 430 60"/><path d="M70 40 C 250 40, 250 140, 430 140"/><path d="M70 40 C 250 40, 250 220, 430 220"/><path d="M70 40 C 250 40, 250 300, 430 300"/><path d="M70 90 C 250 90, 250 60, 430 60"/><path d="M70 90 C 250 90, 250 140, 430 140"/><path d="M70 90 C 250 90, 250 220, 430 220"/><path d="M70 90 C 250 90, 250 300, 430 300"/><path d="M70 140 C 250 140, 250 60, 430 60"/><path d="M70 140 C 250 140, 250 140, 430 140"/><path d="M70 140 C 250 140, 250 220, 430 220"/><path d="M70 140 C 250 140, 250 300, 430 300"/><path d="M70 190 C 250 190, 250 60, 430 60"/><path d="M70 190 C 250 190, 250 140, 430 140"/><path d="M70 190 C 250 190, 250 220, 430 220"/><path d="M70 190 C 250 190, 250 300, 430 300"/><path d="M70 240 C 250 240, 250 60, 430 60"/><path d="M70 240 C 250 240, 250 140, 430 140"/><path d="M70 240 C 250 240, 250 220, 430 220"/><path d="M70 240 C 250 240, 250 300, 430 300"/><path d="M70 290 C 250 290, 250 60, 430 60"/><path d="M70 290 C 250 290, 250 140, 430 140"/><path d="M70 290 C 250 290, 250 220, 430 220"/><path d="M70 290 C 250 290, 250 300, 430 300"/></g>
+          <g class="post"><rect x="14" y="26" width="56" height="28" rx="5"/><rect x="24" y="32" width="36" height="14" rx="2" class="screen"/></g><g class="post"><rect x="14" y="76" width="56" height="28" rx="5"/><rect x="24" y="82" width="36" height="14" rx="2" class="screen"/></g><g class="post"><rect x="14" y="126" width="56" height="28" rx="5"/><rect x="24" y="132" width="36" height="14" rx="2" class="screen"/></g><g class="post"><rect x="14" y="176" width="56" height="28" rx="5"/><rect x="24" y="182" width="36" height="14" rx="2" class="screen"/></g><g class="post"><rect x="14" y="226" width="56" height="28" rx="5"/><rect x="24" y="232" width="36" height="14" rx="2" class="screen"/></g><g class="post"><rect x="14" y="276" width="56" height="28" rx="5"/><rect x="24" y="282" width="36" height="14" rx="2" class="screen"/></g>
+          <g class="db"><rect x="430" y="36" width="118" height="48" rx="10"/><image href="../assets/db/oracle.svg" x="440" y="46" width="28" height="28"/><text x="474" y="65">Oracle</text></g><g class="db"><rect x="430" y="116" width="118" height="48" rx="10"/><image href="../assets/db/mssql.svg" x="440" y="126" width="28" height="28"/><text x="474" y="145">SQL Server</text></g><g class="db"><rect x="430" y="196" width="118" height="48" rx="10"/><image href="../assets/db/postgresql.svg" x="440" y="206" width="28" height="28"/><text x="474" y="225">PostgreSQL</text></g><g class="db"><rect x="430" y="276" width="118" height="48" rx="10"/><image href="../assets/db/mysql.svg" x="440" y="286" width="28" height="28"/><text x="474" y="305">MySQL</text></g>
+          <text x="280" y="350" text-anchor="middle" class="warn">Who read what? Who changed what?</text>
+        </svg>
+      </figure>
+      <figure class="arch-panel arch-after">
+        <figcaption><strong>With SQLVault Gateway</strong><span>Every query goes through a single point that analyses, masks, gets approval and records.</span></figcaption>
+        <svg viewBox="0 0 560 360" role="img" aria-label="Six workstations connected to SQLVault Gateway, the only access point to the four production databases">
+          <g class="lines-in"><path d="M70 40 C 140 40, 150 180, 200 180"/><path d="M70 90 C 140 90, 150 180, 200 180"/><path d="M70 140 C 140 140, 150 180, 200 180"/><path d="M70 190 C 140 190, 150 180, 200 180"/><path d="M70 240 C 140 240, 150 180, 200 180"/><path d="M70 290 C 140 290, 150 180, 200 180"/></g>
+          <g class="lines-out"><path d="M350 180 C 390 180, 395 60, 430 60"/><path d="M350 180 C 390 180, 395 140, 430 140"/><path d="M350 180 C 390 180, 395 220, 430 220"/><path d="M350 180 C 390 180, 395 300, 430 300"/></g>
+          <g class="post"><rect x="14" y="26" width="56" height="28" rx="5"/><rect x="24" y="32" width="36" height="14" rx="2" class="screen"/></g><g class="post"><rect x="14" y="76" width="56" height="28" rx="5"/><rect x="24" y="82" width="36" height="14" rx="2" class="screen"/></g><g class="post"><rect x="14" y="126" width="56" height="28" rx="5"/><rect x="24" y="132" width="36" height="14" rx="2" class="screen"/></g><g class="post"><rect x="14" y="176" width="56" height="28" rx="5"/><rect x="24" y="182" width="36" height="14" rx="2" class="screen"/></g><g class="post"><rect x="14" y="226" width="56" height="28" rx="5"/><rect x="24" y="232" width="36" height="14" rx="2" class="screen"/></g><g class="post"><rect x="14" y="276" width="56" height="28" rx="5"/><rect x="24" y="282" width="36" height="14" rx="2" class="screen"/></g>
+          <g class="db"><rect x="430" y="36" width="118" height="48" rx="10"/><image href="../assets/db/oracle.svg" x="440" y="46" width="28" height="28"/><text x="474" y="65">Oracle</text></g><g class="db"><rect x="430" y="116" width="118" height="48" rx="10"/><image href="../assets/db/mssql.svg" x="440" y="126" width="28" height="28"/><text x="474" y="145">SQL Server</text></g><g class="db"><rect x="430" y="196" width="118" height="48" rx="10"/><image href="../assets/db/postgresql.svg" x="440" y="206" width="28" height="28"/><text x="474" y="225">PostgreSQL</text></g><g class="db"><rect x="430" y="276" width="118" height="48" rx="10"/><image href="../assets/db/mysql.svg" x="440" y="286" width="28" height="28"/><text x="474" y="305">MySQL</text></g>
+          <g class="gw"><rect x="200" y="105" width="150" height="150" rx="16"/><image href="../assets/img/logo-primaire.png" x="257" y="117" width="36" height="36"/>
+            <text x="275" y="172" text-anchor="middle" class="gw-name">SQLVault Gateway</text>
+            <text x="275" y="194" text-anchor="middle" class="gw-step">1 · Analysis</text><text x="275" y="211" text-anchor="middle" class="gw-step">2 · Decision</text>
+            <text x="275" y="228" text-anchor="middle" class="gw-step">3 · Masking</text><text x="275" y="245" text-anchor="middle" class="gw-step">4 · Audit trail</text></g>
+        </svg>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Fonctionnalités -->
+<section class="section alt" id="fonctions">
+  <div class="wrap">
+    <p class="kicker">The solution</p>
+    <h2>Six guarantees in a single tool</h2>
+    <div class="features">
+      <article class="feature">
+        <span class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+        <h3>Everyone sees only what they need</h3>
+        <p>Sensitive data (IBANs, cards, balances, contact details) is masked automatically according to each person's role, including in Excel exports. Nine masking modes, including the PCI DSS card format.</p>
+      </article>
+      <article class="feature">
+        <span class="ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5M10 20c0-3 3-5 6-5s6 2 6 5"/></svg></span>
+        <h3>No change without a second approval</h3>
+        <p>Every data correction becomes a justified request, approved by a second person before it runs. Nobody approves their own request.</p>
+      </article>
+      <article class="feature">
+        <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></span>
+        <h3>Serious mistakes are prevented</h3>
+        <p>Dropping a table, updating without a condition, stacked queries, injection patterns: the query is blocked before it reaches the database, with a clear reason and a security alert.</p>
+      </article>
+      <article class="feature">
+        <span class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
+        <h3>Automated, secure reports</h3>
+        <p>Hand-made extracts are replaced by scheduled Excel reports, approved by a manager, always masked, and downloadable by authorised colleagues.</p>
+      </article>
+      <article class="feature">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
+        <h3>A trace that cannot be erased</h3>
+        <p>Every access is written to a signed, chained audit log: who, what, when, from which workstation, with which role. A single altered line is detected.</p>
+      </article>
+      <article class="feature">
+        <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+        <h3>A real SQL editor, in the browser</h3>
+        <p>Autocompletion, table explorer, execution plans, shared favourites, exports: your teams keep a comfortable way of working, with no SQL client on their workstations.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Fonctionnement -->
+<section class="section" id="fonctionnement">
+  <div class="wrap">
+    <p class="kicker">Request flow</p>
+    <h2>Every query follows the same path, in a few milliseconds</h2>
+    <ol class="steps">
+      <li><b>1</b><h3>Analysis</h3><p>The query is read before it reaches the database. Forbidden operations are blocked.</p></li>
+      <li><b>2</b><h3>Decision</h3><p>A read runs immediately. A change goes to dual approval.</p></li>
+      <li><b>3</b><h3>Masking</h3><p>Sensitive columns are masked in the result, according to the person's role.</p></li>
+      <li><b>4</b><h3>Audit trail</h3><p>The query, accepted or refused, is written to the chained audit log.</p></li>
+    </ol>
+    <div class="roles">
+      <h3>Split administration: no one holds all the keys</h3>
+      <div class="grid4">
+        <div><strong>Technical administrator</strong><span>registers the databases</span></div>
+        <div><strong>Security officer</strong><span>decides on masking</span></div>
+        <div><strong>Access administrator</strong><span>manages accounts</span></div>
+        <div><strong>Super administrator</strong><span>manages roles, with four-eyes approval</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Démo -->
+<section class="section dark" id="demo">
+  <div class="wrap">
+    <p class="kicker">Demo</p>
+    <h2>SQLVault Gateway on video</h2>
+    <p class="sub">A 90-second overview (in French, with subtitles), filmed on Banque Téranga, a fictitious demo bank.</p>
+    <div class="video">
+      <video controls preload="none" poster="../assets/img/video-poster.jpg" playsinline>
+        <source src="../assets/video/presentation.mp4" type="video/mp4">
+        Your browser cannot play this video. <a href="../assets/video/presentation.mp4">Download the video</a>.
+      </video>
+    </div>
+    <h3 class="gal-title">A few screens</h3>
+    <div class="gallery">
+      <figure><button data-full="../assets/img/19-examen-demande.jpg"><img loading="lazy" src="../assets/img/19-examen-demande.jpg" alt="A validator reviewing a change request" width="1100" height="688"></button><figcaption>Four-eyes approval of a change</figcaption></figure>
+      <figure><button data-full="../assets/img/11-requete-bloquee.jpg"><img loading="lazy" src="../assets/img/11-requete-bloquee.jpg" alt="Table drop refused by the security policy" width="1100" height="688"></button><figcaption>Table drop refused before reaching the database</figcaption></figure>
+      <figure><button data-full="../assets/img/26-journal-audit.jpg"><img loading="lazy" src="../assets/img/26-journal-audit.jpg" alt="Audit log seen by an auditor" width="1100" height="688"></button><figcaption>Audit log: who, what, when, from which workstation</figcaption></figure>
+      <figure><button data-full="../assets/img/12c-sqlserver-monetique.jpg"><img loading="lazy" src="../assets/img/12c-sqlserver-monetique.jpg" alt="Card numbers masked on SQL Server" width="1100" height="688"></button><figcaption>Card numbers masked (PCI DSS)</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- Pour qui -->
+<section class="section" id="pour-qui">
+  <div class="wrap">
+    <p class="kicker">Who it is for</p>
+    <h2>Something for everyone</h2>
+    <div class="grid4 who">
+      <article class="card"><h3>Executive management</h3><p>Operational and reputational risk under control, and demonstrably so to regulators and auditors.</p></article>
+      <article class="card"><h3>IT department</h3><p>One access path to the databases, no SQL client to maintain on workstations, deployed as a Docker container.</p></article>
+      <article class="card"><h3>CISO and compliance</h3><p>Masking controlled by security, real-time alerts, access reviews exportable to Excel.</p></article>
+      <article class="card"><h3>Business and audit teams</h3><p>Useful data, reports that arrive on their own, and a complete history a few clicks away.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- Sécurité -->
+<section class="section alt" id="securite">
+  <div class="wrap two">
+    <div>
+      <p class="kicker">Security and deployment</p>
+      <h2>Built for banking environments</h2>
+      <p>SQLVault Gateway is installed on a server inside the bank. Workstations reach it over HTTPS from a web browser. The databases are opened only to the SQLVault Gateway server, through technical accounts with limited rights.</p>
+      <a class="link" href="../assets/docs/SQLVault-Gateway-Note-DSI-RSSI.pdf">Read the IT / CISO deployment note (French) →</a>
+    </div>
+    <ul class="checks">
+      <li><b>Hosted on your premises</b>, in your network: no data leaves the bank.</li>
+      <li><b>Database passwords encrypted</b> (AES-256) and never displayed again.</li>
+      <li><b>Accounts activated by the users themselves</b>: administrators never know a password.</li>
+      <li><b>Signed, chained audit log</b>, verifiable at any time, owned by the bank.</li>
+      <li><b>Engine written in Go</b>, shipped as a lightweight, read-only, unprivileged Docker image.</li>
+      <li><b>Customisable roles and permissions</b>, with incompatible rights refused and four-eyes approval.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Pilote -->
+<section class="section" id="pilote">
+  <div class="wrap">
+    <p class="kicker">Pilot</p>
+    <h2>Four weeks to decide, on your own criteria</h2>
+    <p class="sub">A team from the bank uses SQLVault Gateway on a test database. No production data, and no current tool is switched off.</p>
+    <ol class="timeline">
+      <li><span>Week 1</span><h3>Installation</h3><p>Server, test databases, roles, masking rules approved by the CISO.</p></li>
+      <li><span>Week 2</span><h3>Training</h3><p>Users and administrators trained, first logins, first requests.</p></li>
+      <li><span>Week 3</span><h3>Real use</h3><p>Teams work in the tool; the CISO runs their test scenario.</p></li>
+      <li><span>Week 4</span><h3>Review</h3><p>Criteria measured, restore tested, recommendation delivered. The bank decides.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- Documents -->
+<section class="section alt" id="documents">
+  <div class="wrap">
+    <p class="kicker">Documents</p>
+    <h2>Everything you need before we meet</h2>
+    <div class="docs">
+      <a class="doc" href="../assets/docs/SQLVault-Gateway-Fiche-produit.pdf"><span class="pdf">PDF</span><strong>Product sheet</strong><small>2 pages, in French · the essentials at a glance</small></a>
+      <a class="doc" href="../assets/docs/SQLVault-Gateway-Note-DSI-RSSI.pdf"><span class="pdf">PDF</span><strong>IT / CISO deployment note</strong><small>7 pages, in French · accounts, network, workstations, audit</small></a>
+      <a class="doc doc-ask" href="mailto:sqlvaultgateway@gmail.com?subject=SQLVault%20Gateway%20user%20guide%20request"><span class="pdf">On request</span><strong>User guide</strong><small>34 pages, in French · every screen, illustrated · sent to interested institutions</small></a>
+      <a class="doc doc-ask" href="mailto:sqlvaultgateway@gmail.com?subject=SQLVault%20Gateway%20technical%20document%20request"><span class="pdf">NDA</span><strong>Technical reference</strong><small>On request, under a non-disclosure agreement</small></a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="wrap narrow">
+    <p class="kicker">Frequently asked questions</p>
+    <h2>Your questions, answered</h2>
+    <details><summary>Do we need to install anything on workstations?</summary><p>No. A recent browser is enough. SQLVault Gateway is installed on a server inside the bank and used over HTTPS.</p></details>
+    <details><summary>Does our data leave the bank?</summary><p>No. The tool is hosted in your infrastructure, and DEF TECH does not need access to your data, including during the pilot.</p></details>
+    <details><summary>Which databases are supported?</summary><p>Oracle, SQL Server, PostgreSQL, MySQL and MariaDB, with or without TLS encryption. The same screen and the same rules apply to all of them.</p></details>
+    <details><summary>Does the tool slow queries down?</summary><p>Analysis and masking add a few milliseconds. Large results are streamed, and full exports are produced on the server.</p></details>
+    <details><summary>What about database administrators (DBAs)?</summary><p>Schema changes and emergency access go through dedicated, recorded channels (bastion host, password vault). The IT / CISO note describes the full set-up.</p></details>
+    <details><summary>How does a pilot work?</summary><p>Four weeks on a test database, with 5 to 10 users and success criteria agreed on day one with your IT department and your CISO.</p></details>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section contact" id="contact">
+  <div class="wrap contact-in">
+    <div>
+      <h2>Let's talk about access to your data</h2>
+      <p>A 30-minute online demo or a 4-week pilot in your own environment: write to us and we will get back to you quickly.</p>
+    </div>
+    <div class="contact-box">
+      <a class="btn btn-light" href="mailto:sqlvaultgateway@gmail.com?subject=SQLVault%20Gateway%20demo%20request">Request a demo</a>
+      <a class="mail" href="mailto:sqlvaultgateway@gmail.com">sqlvaultgateway@gmail.com</a>
+      <span>The SQLVault Gateway team · DEF TECH 2.0 · Senegal</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="brand"><img src="../assets/img/logo-blanc.png" alt="" width="28" height="28"><span>SQLVault Gateway</span></div>
+    <p>© 2026 DEF TECH 2.0. All rights reserved. SQLVault Gateway and its text, screenshots, videos and documents may not be reproduced without written permission. Screenshots and video use fictitious data (Banque Téranga). Oracle, MySQL, SQL Server, PostgreSQL and MariaDB are trademarks of their respective owners; logos: Devicon project, MIT licence.</p>
+    <a href="#haut">Back to top ↑</a>
+  </div>
+</footer>
+
+<dialog class="lightbox" aria-label="Enlarged screenshot"><img alt=""><button aria-label="Close">×</button></dialog>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

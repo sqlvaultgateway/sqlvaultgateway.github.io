@@ -61,7 +61,9 @@ Le site est en ligne en une à deux minutes sur **https://sqlvaultgateway.github
 L'ancienne adresse `sqlvaultgateway.github.io` redirigera alors automatiquement vers le nouveau domaine.
 
 ## Mettre à jour
+- **Version anglaise** : `en/index.html` est produite à partir de la page française. Après une modification de `index.html`, ajouter la traduction des textes modifiés dans `tools/make-en.py`, puis lancer `python3 tools/make-en.py` (le script signale tout texte non traduit).
 - Textes : `index.html`. Couleurs et mise en page : `assets/style.css`.
+- Captures : toujours passer par `tools/watermark.py` (largeur réduite + filigrane « SQLVault Gateway · démonstration »), avec le Python qui a Pillow.
 - Documents : remplacer les PDF de `assets/docs/` en gardant les mêmes noms.
-- Adresse de contact : rechercher `mbodjiousseynou94@gmail.com` dans `index.html` (5 occurrences) le jour où une adresse `contact@sqlvaultgateway.io` existe.
+- Adresse de contact : `sqlvaultgateway@gmail.com`, dans `index.html` et `en/index.html`. Le jour où une adresse `contact@sqlvaultgateway.com` existe, la remplacer dans les deux pages.
 - Après chaque modification : `git add . && git commit -m "…" && git push`. Le site se met à jour en une à deux minutes.
