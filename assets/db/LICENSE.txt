@@ -1,0 +1,4 @@
+Logos des bases de données : projet devicon (https://github.com/devicons/devicon), v2.16.0,
+licence MIT, Copyright (c) 2015 konpa. Les marques restent la propriété de leurs titulaires
+(MySQL et Oracle : Oracle Corporation ; MariaDB : MariaDB Foundation ; PostgreSQL : PostgreSQL
+Global Development Group ; SQL Server : Microsoft) ; elles indiquent seulement le type de base.

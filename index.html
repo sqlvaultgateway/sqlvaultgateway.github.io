@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SQLVault Gateway · Accès sécurisé aux bases de données bancaires</title>
+  <meta name="description" content="SQLVault Gateway contrôle et trace chaque accès aux bases de données de la banque : données sensibles masquées, double validation des modifications, rapports automatiques et journal d'audit infalsifiable. Oracle, SQL Server, PostgreSQL, MySQL, MariaDB.">
+  <link rel="canonical" href="https://sqlvaultgateway.github.io/">
+  <link rel="icon" href="favicon.ico">
+  <meta name="theme-color" content="#0b1f3a">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="SQLVault Gateway">
+  <meta property="og:title" content="SQLVault Gateway · Qui a consulté les données de vos clients hier ?">
+  <meta property="og:description" content="Masquage des données sensibles, validation à quatre yeux, rapports automatiques et journal d'audit infalsifiable, pour toutes les bases de la banque.">
+  <meta property="og:url" content="https://sqlvaultgateway.github.io/">
+  <meta property="og:image" content="https://sqlvaultgateway.github.io/assets/img/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"SQLVault Gateway","applicationCategory":"SecurityApplication",
+   "operatingSystem":"Linux (Docker)","description":"Passerelle d'accès sécurisé aux bases de données bancaires : masquage, double validation, rapports planifiés, journal d'audit chaîné.",
+   "publisher":{"@type":"Organization","name":"DEF TECH 2.0","email":"mbodjiousseynou94@gmail.com"},"url":"https://sqlvaultgateway.github.io/","inLanguage":"fr"}
+  </script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="nav" id="haut">
+  <div class="wrap nav-in">
+    <a class="brand" href="#haut" aria-label="SQLVault Gateway, accueil"><img src="assets/img/logo-primaire.png" alt="" width="34" height="34"><span>SQLVault Gateway</span></a>
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    <nav id="menu" aria-label="Navigation principale">
+      <a href="#fonctions">Fonctionnalités</a>
+      <a href="#fonctionnement">Fonctionnement</a>
+      <a href="#demo">Démo</a>
+      <a href="#securite">Sécurité</a>
+      <a href="#documents">Documents</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-sm" href="#contact">Demander un pilote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+
+<!-- Accroche -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-text">
+      <p class="kicker">Accès sécurisé aux bases de données bancaires</p>
+      <h1>Qui a consulté les données de vos clients hier&nbsp;?</h1>
+      <p class="lead">SQLVault Gateway est le point de passage unique et contrôlé entre vos équipes et les bases de données de la banque. Chacun ne voit que ce dont il a besoin, aucune modification ne part sans double validation, et chaque accès laisse une trace impossible à effacer.</p>
+      <div class="cta">
+        <a class="btn" href="#contact">Demander un pilote de 4 semaines</a>
+        <a class="btn btn-ghost" href="#demo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Voir la vidéo (1 min 38)</a>
+      </div>
+      <ul class="hero-points">
+        <li>Rien à installer sur les postes</li>
+        <li>Hébergé dans votre infrastructure</li>
+        <li>Aucune donnée ne quitte la banque</li>
+      </ul>
+    </div>
+    <figure class="shot hero-shot">
+      <div class="shot-bar"><i></i><i></i><i></i><span>sqlvault.votre-banque.sn</span></div>
+      <img src="assets/img/05-editeur-resultat-masque.jpg" alt="Éditeur SQL de SQLVault Gateway : IBAN et soldes masqués pour une analyste" width="1600" height="900">
+    </figure>
+  </div>
+</section>
+
+<!-- Moteurs -->
+<section class="engines" aria-label="Bases de données compatibles">
+  <div class="wrap engines-in">
+    <p>Compatible avec vos bases, telles qu'elles sont</p>
+    <ul>
+      <li><img src="assets/db/oracle.svg" alt="" width="40" height="40">Oracle</li>
+      <li><img src="assets/db/mssql.svg" alt="" width="40" height="40">SQL Server</li>
+      <li><img src="assets/db/postgresql.svg" alt="" width="40" height="40">PostgreSQL</li>
+      <li><img src="assets/db/mysql.svg" alt="" width="40" height="40">MySQL</li>
+      <li><img src="assets/db/mariadb.svg" alt="" width="40" height="40">MariaDB</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Problème -->
+<section class="section" id="probleme">
+  <div class="wrap">
+    <p class="kicker">Le constat</p>
+    <h2>Les données des clients sont le premier actif de la banque. Leur accès est souvent le moins contrôlé.</h2>
+    <div class="grid3">
+      <article class="card">
+        <h3>Des accès directs à la production</h3>
+        <p>Analystes, développeurs et prestataires se connectent aux bases avec des outils installés sur leur poste. Chacun voit tout, y compris les numéros de compte et de carte.</p>
+      </article>
+      <article class="card">
+        <h3>Des modifications sans contrôle</h3>
+        <p>Une correction urgente, un oubli de condition, et des milliers de lignes sont modifiées en production, sans que personne ne l'ait validé.</p>
+      </article>
+      <article class="card">
+        <h3>Des preuves difficiles à produire</h3>
+        <p>Lors d'un audit ou d'une inspection, il est long, voire impossible, de dire avec certitude qui a consulté quoi, quand et depuis quel poste.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Fonctionnalités -->
+<section class="section alt" id="fonctions">
+  <div class="wrap">
+    <p class="kicker">La solution</p>
+    <h2>Cinq garanties, dans un seul outil</h2>
+    <div class="features">
+      <article class="feature">
+        <span class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+        <h3>Chacun ne voit que ce dont il a besoin</h3>
+        <p>Les informations sensibles (IBAN, cartes, soldes, coordonnées) sont masquées automatiquement selon la fonction de la personne, jusque dans les exports Excel. Neuf modes de masquage, dont le format carte bancaire PCI DSS.</p>
+      </article>
+      <article class="feature">
+        <span class="ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5M10 20c0-3 3-5 6-5s6 2 6 5"/></svg></span>
+        <h3>Aucune modification sans double validation</h3>
+        <p>Toute correction de données devient une demande justifiée, approuvée par une deuxième personne avant d'être exécutée. Personne ne valide sa propre demande.</p>
+      </article>
+      <article class="feature">
+        <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></span>
+        <h3>Les erreurs graves sont empêchées</h3>
+        <p>Suppression de table, modification sans condition, requêtes multiples, motif d'injection : la requête est bloquée avant d'atteindre la base, avec un motif clair et une alerte de sécurité.</p>
+      </article>
+      <article class="feature">
+        <span class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
+        <h3>Des rapports automatiques et sécurisés</h3>
+        <p>Les extractions envoyées à la main sont remplacées par des rapports Excel planifiés, validés par un responsable, toujours masqués, et téléchargeables par les collègues autorisés.</p>
+      </article>
+      <article class="feature">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
+        <h3>Une trace impossible à effacer</h3>
+        <p>Chaque accès est inscrit dans un journal d'audit signé et chaîné : qui, quoi, quand, depuis quel poste, avec quel rôle. Une seule ligne retouchée est détectée.</p>
+      </article>
+      <article class="feature">
+        <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+        <h3>Un vrai éditeur SQL, dans le navigateur</h3>
+        <p>Autocomplétion, explorateur de tables, plan d'exécution, favoris partagés, exports : vos équipes gardent leur confort de travail, sans client SQL sur les postes.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Fonctionnement -->
+<section class="section" id="fonctionnement">
+  <div class="wrap">
+    <p class="kicker">Fonctionnement</p>
+    <h2>Chaque requête suit le même parcours, en quelques millisecondes</h2>
+    <ol class="steps">
+      <li><b>1</b><h3>Analyse</h3><p>La requête est lue avant d'atteindre la base. Les opérations interdites sont bloquées.</p></li>
+      <li><b>2</b><h3>Décision</h3><p>Une lecture s'exécute aussitôt. Une modification part en double validation.</p></li>
+      <li><b>3</b><h3>Masquage</h3><p>Les colonnes sensibles sont masquées dans le résultat, selon le rôle de la personne.</p></li>
+      <li><b>4</b><h3>Traçabilité</h3><p>La requête, acceptée ou refusée, est inscrite dans le journal d'audit chaîné.</p></li>
+    </ol>
+    <div class="roles">
+      <h3>Une administration répartie : personne ne détient seul toutes les clés</h3>
+      <div class="grid4">
+        <div><strong>Administrateur technique</strong><span>déclare les bases</span></div>
+        <div><strong>Responsable sécurité</strong><span>décide du masquage</span></div>
+        <div><strong>Administrateur des accès</strong><span>gère les comptes</span></div>
+        <div><strong>Super administrateur</strong><span>gère les rôles, validés à quatre yeux</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Démo -->
+<section class="section dark" id="demo">
+  <div class="wrap">
+    <p class="kicker">Démonstration</p>
+    <h2>SQLVault Gateway en vidéo</h2>
+    <p class="sub">Une présentation d'une minute et demie, tournée sur la Banque Téranga, une banque fictive de démonstration.</p>
+    <div class="video">
+      <video controls preload="none" poster="assets/img/video-poster.jpg" playsinline>
+        <source src="assets/video/presentation.mp4" type="video/mp4">
+        Votre navigateur ne lit pas la vidéo. <a href="assets/video/presentation.mp4">Télécharger la vidéo</a>.
+      </video>
+    </div>
+    <h3 class="gal-title">Quelques écrans</h3>
+    <div class="gallery">
+      <figure><button data-full="assets/img/19-examen-demande.jpg"><img loading="lazy" src="assets/img/19-examen-demande.jpg" alt="Examen d'une demande de modification par un valideur" width="1600" height="900"></button><figcaption>Validation à quatre yeux d'une modification</figcaption></figure>
+      <figure><button data-full="assets/img/11-requete-bloquee.jpg"><img loading="lazy" src="assets/img/11-requete-bloquee.jpg" alt="Suppression de table refusée par la politique de sécurité" width="1600" height="900"></button><figcaption>Suppression de table refusée avant d'atteindre la base</figcaption></figure>
+      <figure><button data-full="assets/img/26-journal-audit.jpg"><img loading="lazy" src="assets/img/26-journal-audit.jpg" alt="Journal d'audit vu par une auditrice" width="1600" height="900"></button><figcaption>Journal d'audit : qui, quoi, quand, depuis quel poste</figcaption></figure>
+      <figure><button data-full="assets/img/27-integrite.jpg"><img loading="lazy" src="assets/img/27-integrite.jpg" alt="Vérification d'intégrité du journal d'audit" width="1600" height="900"></button><figcaption>Vérification d'intégrité du journal</figcaption></figure>
+      <figure><button data-full="assets/img/21-rapport-formulaire.jpg"><img loading="lazy" src="assets/img/21-rapport-formulaire.jpg" alt="Programmation d'un rapport avec aperçu masqué" width="1600" height="900"></button><figcaption>Rapport planifié, aperçu déjà masqué</figcaption></figure>
+      <figure><button data-full="assets/img/12c-sqlserver-monetique.jpg"><img loading="lazy" src="assets/img/12c-sqlserver-monetique.jpg" alt="Numéros de carte masqués sur SQL Server" width="1600" height="900"></button><figcaption>Numéros de carte masqués (PCI DSS)</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- Pour qui -->
+<section class="section" id="pour-qui">
+  <div class="wrap">
+    <p class="kicker">Pour qui</p>
+    <h2>Chacun y trouve son compte</h2>
+    <div class="grid4 who">
+      <article class="card"><h3>Direction générale</h3><p>Un risque opérationnel et réputationnel maîtrisé, démontrable aux régulateurs et aux auditeurs.</p></article>
+      <article class="card"><h3>DSI</h3><p>Un seul chemin d'accès aux bases, sans client SQL à maintenir sur les postes, déployé en conteneur Docker.</p></article>
+      <article class="card"><h3>RSSI et conformité</h3><p>Masquage piloté par la sécurité, alertes en temps réel, revue des habilitations exportable en Excel.</p></article>
+      <article class="card"><h3>Équipes métier et audit</h3><p>Des données utiles, des rapports qui arrivent seuls, et un historique complet consultable en quelques clics.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- Sécurité -->
+<section class="section alt" id="securite">
+  <div class="wrap two">
+    <div>
+      <p class="kicker">Sécurité et déploiement</p>
+      <h2>Conçu pour l'environnement bancaire</h2>
+      <p>SQLVault Gateway s'installe sur un serveur de la banque. Les postes y accèdent en HTTPS, depuis un simple navigateur. Les bases ne sont plus ouvertes qu'au serveur SQLVault Gateway, avec des comptes techniques à droits limités.</p>
+      <a class="link" href="assets/docs/SQLVault-Gateway-Note-DSI-RSSI.pdf">Lire la note de déploiement DSI / RSSI →</a>
+    </div>
+    <ul class="checks">
+      <li><b>Hébergement chez vous</b>, dans votre réseau : aucune donnée ne quitte la banque.</li>
+      <li><b>Mots de passe des bases chiffrés</b> (AES-256) et jamais réaffichés.</li>
+      <li><b>Comptes activés par l'utilisateur lui-même</b> : l'administrateur ne connaît aucun mot de passe.</li>
+      <li><b>Journal d'audit signé et chaîné</b>, vérifiable à tout moment, propriété de la banque.</li>
+      <li><b>Moteur écrit en Go</b>, livré dans une image Docker légère, en lecture seule et sans privilèges.</li>
+      <li><b>Rôles et droits personnalisables</b>, avec refus des droits incompatibles et validation à quatre yeux.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Pilote -->
+<section class="section" id="pilote">
+  <div class="wrap">
+    <p class="kicker">Pilote</p>
+    <h2>Quatre semaines pour décider, sur vos propres critères</h2>
+    <p class="sub">Une équipe de la banque utilise SQLVault Gateway sur une base de recette. Aucune donnée de production, aucun outil actuel coupé.</p>
+    <ol class="timeline">
+      <li><span>Semaine 1</span><h3>Installation</h3><p>Serveur, bases de recette, rôles, règles de masquage validées par le RSSI.</p></li>
+      <li><span>Semaine 2</span><h3>Formation</h3><p>Utilisateurs et administrateurs formés, premiers accès, premières demandes.</p></li>
+      <li><span>Semaine 3</span><h3>Usage réel</h3><p>Les équipes travaillent dans l'outil ; le RSSI déroule son scénario de test.</p></li>
+      <li><span>Semaine 4</span><h3>Bilan</h3><p>Critères mesurés, restauration testée, recommandation remise. La banque décide.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- Documents -->
+<section class="section alt" id="documents">
+  <div class="wrap">
+    <p class="kicker">Documents</p>
+    <h2>Tout savoir avant de nous rencontrer</h2>
+    <div class="docs">
+      <a class="doc" href="assets/docs/SQLVault-Gateway-Fiche-produit.pdf"><span class="pdf">PDF</span><strong>Fiche produit</strong><small>2 pages · l'essentiel en un coup d'œil</small></a>
+      <a class="doc" href="assets/docs/SQLVault-Gateway-Note-DSI-RSSI.pdf"><span class="pdf">PDF</span><strong>Note de déploiement DSI / RSSI</strong><small>7 pages · comptes, réseau, postes, audit</small></a>
+      <a class="doc doc-ask" href="mailto:mbodjiousseynou94@gmail.com?subject=Demande%20du%20guide%20utilisateur%20SQLVault%20Gateway"><span class="pdf">Sur demande</span><strong>Guide utilisateur</strong><small>34 pages · chaque écran, illustré · envoyé aux établissements intéressés</small></a>
+      <a class="doc doc-ask" href="mailto:mbodjiousseynou94@gmail.com?subject=Demande%20du%20document%20technique%20SQLVault%20Gateway"><span class="pdf">NDA</span><strong>Document technique de référence</strong><small>Sur demande, sous accord de confidentialité</small></a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="wrap narrow">
+    <p class="kicker">Questions fréquentes</p>
+    <h2>Vos questions, nos réponses</h2>
+    <details><summary>Faut-il installer quelque chose sur les postes de travail ?</summary><p>Non. Un navigateur récent suffit. SQLVault Gateway est installé sur un serveur de la banque et s'utilise en HTTPS.</p></details>
+    <details><summary>Nos données sortent-elles de la banque ?</summary><p>Non. L'outil est hébergé dans votre infrastructure, et DEF TECH n'a pas besoin d'accéder à vos données, y compris pendant le pilote.</p></details>
+    <details><summary>Quelles bases de données sont prises en charge ?</summary><p>Oracle, SQL Server, PostgreSQL, MySQL et MariaDB, avec ou sans chiffrement TLS. Le même écran et les mêmes règles servent pour toutes.</p></details>
+    <details><summary>Est-ce que l'outil ralentit les requêtes ?</summary><p>L'analyse et le masquage ajoutent quelques millisecondes. Les grands résultats sont lus en flux, et l'export complet est produit côté serveur.</p></details>
+    <details><summary>Que se passe-t-il pour les administrateurs de bases (DBA) ?</summary><p>Les évolutions de structure et l'accès d'urgence passent par des circuits dédiés et tracés (bastion, coffre-fort à mots de passe). La note DSI / RSSI décrit le dispositif complet.</p></details>
+    <details><summary>Comment se déroule un pilote ?</summary><p>Quatre semaines sur une base de recette, avec 5 à 10 utilisateurs et des critères de réussite fixés dès le premier jour avec votre DSI et votre RSSI.</p></details>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section contact" id="contact">
+  <div class="wrap contact-in">
+    <div>
+      <h2>Parlons de vos accès aux données</h2>
+      <p>Démonstration en ligne de 30 minutes ou pilote de 4 semaines sur votre propre environnement : écrivez-nous, nous vous répondons rapidement.</p>
+    </div>
+    <div class="contact-box">
+      <a class="btn btn-light" href="mailto:mbodjiousseynou94@gmail.com?subject=Demande%20de%20d%C3%A9monstration%20SQLVault%20Gateway">Demander une démonstration</a>
+      <a class="mail" href="mailto:mbodjiousseynou94@gmail.com">mbodjiousseynou94@gmail.com</a>
+      <span>Ousseynou MBODJI, CTO · DEF TECH 2.0 · Sénégal</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="brand"><img src="assets/img/logo-blanc.png" alt="" width="28" height="28"><span>SQLVault Gateway</span></div>
+    <p>© 2026 DEF TECH 2.0. Tous droits réservés. SQLVault Gateway, ses textes, captures, vidéos et documents ne peuvent être reproduits sans autorisation écrite. Les captures et la vidéo utilisent des données fictives (Banque Téranga). Oracle, MySQL, SQL Server, PostgreSQL et MariaDB sont des marques de leurs propriétaires respectifs ; logos : projet Devicon, licence MIT.</p>
+    <a href="#haut">Haut de page ↑</a>
+  </div>
+</footer>
+
+<dialog class="lightbox" aria-label="Agrandissement de la capture"><img alt=""><button aria-label="Fermer">×</button></dialog>
+<script src="assets/site.js" defer></script>
+</body>
+</html>
