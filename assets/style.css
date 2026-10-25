@@ -157,12 +157,6 @@ details p { color: var(--muted); }
   .grid4, .steps, .docs, .timeline { grid-template-columns: repeat(2, 1fr); }
   .steps li::after { display: none; }
   .timeline { border-top: 0; gap: 24px; } .timeline li { border-top: 3px solid var(--line); }
-  .burger { display: block; }
-  .nav nav { position: absolute; top: 66px; left: 0; right: 0; background: #fff; flex-direction: column; align-items: stretch; gap: 0;
-    padding: 8px 16px 18px; border-bottom: 1px solid var(--line); box-shadow: var(--shadow); display: none; }
-  .nav nav.open { display: flex; }
-  .nav nav a:not(.btn) { padding: 12px 4px; border-bottom: 1px solid var(--line); }
-  .nav nav .btn { margin-top: 14px; justify-content: center; }
   .foot-in { grid-template-columns: 1fr; }
 }
 /* Téléphone */
@@ -195,10 +189,33 @@ details p { color: var(--muted); }
 @media (max-width: 980px) { .arch-grid { grid-template-columns: 1fr; } }
 .nav nav a.lang { font-weight: 700; font-size: .85rem; color: var(--blue); border: 1.5px solid var(--line); border-radius: 999px; padding: .25em .7em; text-decoration: none; }
 .nav nav a.lang:hover { border-color: var(--orange); color: var(--orange); }
-@media (max-width: 980px) { .nav nav a.lang { align-self: flex-start; margin-top: 10px; border-bottom: 1.5px solid var(--line); } }
+@media (max-width: 1180px) { .nav nav a.lang { align-self: flex-start; margin-top: 10px; border-bottom: 1.5px solid var(--line); } }
 
 /* SQLVault Studio */
 .studio-why { list-style: none; padding: 0; margin: 26px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px 24px; color: var(--muted); }
 .studio-why strong { color: var(--navy); }
 .studio-cli { margin: 14px 0 0; color: var(--muted); font-size: .92rem; overflow-wrap: anywhere; }
 .studio-cli code { font-size: .85em; background: rgba(11,31,58,.06); padding: 2px 6px; border-radius: 4px; }
+
+/* Menu : jamais de retour à la ligne ; menu ☰ dès que la place manque. */
+.brand span, .nav nav a { white-space: nowrap; }
+@media (max-width: 1180px) {
+  .burger { display: block; }
+  .nav nav { position: absolute; top: 66px; left: 0; right: 0; background: #fff; flex-direction: column; align-items: stretch; gap: 0;
+    padding: 8px 16px 18px; border-bottom: 1px solid var(--line); box-shadow: var(--shadow); display: none; }
+  .nav nav.open { display: flex; }
+  .nav nav a:not(.btn) { padding: 12px 4px; border-bottom: 1px solid var(--line); }
+  .nav nav .btn { margin-top: 14px; justify-content: center; }
+}
+/* SQLVault Studio : capture et commandes d'installation */
+.studio-shot { margin: 34px 0 28px; }
+.studio-shot img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--line); box-shadow: var(--shadow); }
+.studio-cli { margin: 22px 0 0; display: grid; gap: 8px; font-size: .92rem; color: var(--muted); }
+.studio-cli p { margin: 0; }
+.cmd { display: grid; grid-template-columns: 110px minmax(0, 1fr) auto; align-items: center; gap: 12px; background: #0f1724; color: #cfe3ff; border-radius: 10px; padding: 8px 8px 8px 14px; }
+.cmd span { color: #8aa0bd; font-size: .82rem; font-weight: 600; }
+.cmd code { font: .82rem/1.4 ui-monospace, Menlo, Consolas, monospace; overflow-x: auto; white-space: nowrap; scrollbar-width: thin; padding: 4px 0; }
+.cmd .copy { background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.2); border-radius: 7px; padding: .35em .8em; font: inherit; font-size: .8rem; cursor: pointer; }
+.cmd .copy:hover { background: var(--orange); border-color: var(--orange); }
+.studio-guide { margin: 14px 0 0; }
+@media (max-width: 620px) { .cmd { grid-template-columns: minmax(0, 1fr) auto; } .cmd span { grid-column: 1 / -1; } }

@@ -26,17 +26,16 @@
    "publisher":{"@type":"Organization","name":"DEF TECH 2.0","email":"sqlvaultgateway@gmail.com"},"url":"https://sqlvaultgateway.github.io/en/","inLanguage":"en"}
   </script>
 </head>
-<body>
+<body id="haut">
 <a class="skip" href="#contenu">Skip to content</a>
 
-<header class="nav" id="haut">
+<header class="nav">
   <div class="wrap nav-in">
     <a class="brand" href="#haut" aria-label="SQLVault Gateway, home"><img src="../assets/img/logo-primaire.png" alt="" width="34" height="34"><span>SQLVault Gateway</span></a>
     <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
     <nav id="menu" aria-label="Main navigation">
       <a href="#architecture">How it works</a>
       <a href="#fonctions">Features</a>
-      <a href="#fonctionnement">Request flow</a>
       <a href="#demo">Demo</a>
       <a href="#securite">Security</a>
       <a href="#documents">Documents</a>
@@ -296,6 +295,7 @@
     <p class="kicker">Free · students and developers</p>
     <h2>SQLVault Studio, the free SQL client for learning and development</h2>
     <p class="sub">Complete and unlimited, installed on your computer. MySQL, MariaDB, PostgreSQL, SQL Server, Oracle and SQLite, a one-click MySQL or PostgreSQL server, and a sample banking database to practise on.</p>
+    <figure class="studio-shot"><img loading="lazy" src="../assets/img/studio.jpg" alt="SQLVault Studio: a query on the Banque Téranga sample database" width="1400" height="836"></figure>
     <div class="docs">
       <a class="doc" href="https://github.com/sqlvaultgateway/sqlvault-studio/releases/latest" rel="noopener"><span class="pdf">Windows</span><strong>Windows 10 and 11</strong><small>Next / Next installer, no administrator rights</small></a>
       <a class="doc" href="https://github.com/sqlvaultgateway/sqlvault-studio/releases/latest" rel="noopener"><span class="pdf">macOS</span><strong>macOS 13 and later</strong><small>Apple silicon and Intel · drag into Applications</small></a>
@@ -307,8 +307,12 @@
       <li><strong>Learn by clicking</strong>: every action shows the SQL query it sends.</li>
       <li><strong>No account, no ads, no limits</strong>: your data stays on your computer.</li>
     </ul>
-    <p class="studio-cli">From the command line: <code>curl -fsSL https://raw.githubusercontent.com/sqlvaultgateway/sqlvault-studio/main/install.sh | sh</code> (macOS, Linux) · <code>irm https://raw.githubusercontent.com/sqlvaultgateway/sqlvault-studio/main/install.ps1 | iex</code> (Windows)</p>
-    <p class="studio-cli"><a href="https://github.com/sqlvaultgateway/sqlvault-studio/blob/main/docs/GUIDE.md" rel="noopener">Read the user guide (French) →</a></p>
+    <div class="studio-cli">
+      <p>From the command line:</p>
+      <div class="cmd"><span>macOS, Linux</span><code>curl -fsSL https://raw.githubusercontent.com/sqlvaultgateway/sqlvault-studio/main/install.sh | sh</code><button type="button" class="copy" aria-label="Copy the command">Copy</button></div>
+      <div class="cmd"><span>Windows</span><code>irm https://raw.githubusercontent.com/sqlvaultgateway/sqlvault-studio/main/install.ps1 | iex</code><button type="button" class="copy" aria-label="Copy the command">Copy</button></div>
+    </div>
+    <p class="studio-guide"><a href="https://github.com/sqlvaultgateway/sqlvault-studio/blob/main/docs/GUIDE.md" rel="noopener">Read the user guide (French) →</a></p>
   </div>
 </section>
 

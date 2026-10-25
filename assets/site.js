@@ -19,3 +19,11 @@ if ('IntersectionObserver' in window) {
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
   document.querySelectorAll('.card, .feature, .steps li, .checks li, .timeline li, .doc, .gallery figure').forEach(el => { el.classList.add('reveal'); io.observe(el); });
 }
+
+// Copier une commande d'installation.
+document.querySelectorAll('.cmd .copy').forEach(b => b.addEventListener('click', async () => {
+  const code = b.parentElement.querySelector('code').textContent, label = b.textContent;
+  try { await navigator.clipboard.writeText(code); b.textContent = document.documentElement.lang === 'en' ? 'Copied ✓' : 'Copié ✓'; }
+  catch { const r = document.createRange(); r.selectNodeContents(b.parentElement.querySelector('code')); getSelection().removeAllRanges(); getSelection().addRange(r); }
+  setTimeout(() => { b.textContent = label; }, 1800);
+}));
