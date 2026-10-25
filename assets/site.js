@@ -66,3 +66,21 @@ document.querySelectorAll('.cmd .copy').forEach(b => b.addEventListener('click',
   catch { const r = document.createRange(); r.selectNodeContents(b.parentElement.querySelector('code')); getSelection().removeAllRanges(); getSelection().addRange(r); }
   setTimeout(() => { b.textContent = label; }, 1800);
 }));
+
+// Mesure d'audience (GoatCounter, sans cookie) : actions importantes comptées comme « événements ».
+// Inactif tant que le script GoatCounter n'est pas ajouté à la page.
+const track = (path, title) => { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path, title, event: true }) };
+document.addEventListener('click', e => {
+  const a = e.target.closest('a, button'); if (!a) return;
+  const href = a.getAttribute('href') || '', text = a.textContent.trim().replace(/\s+/g, ' ').slice(0, 60);
+  if (href.startsWith('mailto:')) track('clic-email', 'E-mail : ' + text);
+  else if (href === '#contact' || /pilote|pilot|démonstration|demo/i.test(text) && a.classList.contains('btn')) track('clic-pilote', 'Bouton : ' + text);
+  else if (/github\.com\/sqlvaultgateway\/sqlvault-studio\/releases/.test(href)) track('clic-telecharger-studio', 'Télécharger Studio : ' + text);
+  else if (/\.pdf$/i.test(href)) track('clic-document', 'Document : ' + text);
+  else if (/GUIDE\.md/.test(href)) track('clic-guide-studio', 'Guide Studio');
+  else if (/hub\.docker\.com/.test(href)) track('clic-docker', 'Docker Hub');
+  else if (a.classList.contains('copy')) track('copie-commande', 'Commande copiée : ' + a.parentElement.querySelector('span').textContent);
+  else if (a.classList.contains('lang')) track('changement-langue', 'Langue : ' + text);
+});
+const vid = document.querySelector('.video video');
+if (vid) vid.addEventListener('play', () => track('lecture-video', 'Vidéo lue'), { once: true });
