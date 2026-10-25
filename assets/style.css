@@ -219,3 +219,67 @@ details p { color: var(--muted); }
 .cmd .copy:hover { background: var(--orange); border-color: var(--orange); }
 .studio-guide { margin: 14px 0 0; }
 @media (max-width: 620px) { .cmd { grid-template-columns: minmax(0, 1fr) auto; } .cmd span { grid-column: 1 / -1; } }
+
+/* ===== Animations (désactivées si l'utilisateur demande moins d'animations) ===== */
+.nav { transition: box-shadow .3s, background .3s; }
+.nav.scrolled { box-shadow: 0 6px 24px rgba(11, 31, 58, .08); background: rgba(255, 255, 255, .96); }
+.timeline { position: relative; }
+.timeline::after { content: ""; position: absolute; top: -3px; left: 0; height: 3px; width: 0; background: linear-gradient(90deg, var(--orange), #f39a7d); }
+.hero-shot { position: relative; }
+@media (prefers-reduced-motion: no-preference) {
+  /* Apparition plus franche, en cascade (--d est fixé par site.js) */
+  .reveal { transform: translateY(30px) scale(.985); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
+  .reveal.in { transform: none; }
+
+  /* Accroche : cascade au chargement, capture qui arrive puis flotte, reflet qui balaie l'écran */
+  .hero-text > * { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+  .hero-text > :nth-child(1) { animation-delay: .05s } .hero-text > :nth-child(2) { animation-delay: .15s }
+  .hero-text > :nth-child(3) { animation-delay: .3s } .hero-text > :nth-child(4) { animation-delay: .45s } .hero-text > :nth-child(5) { animation-delay: .6s }
+  .hero-shot { animation: shot-in 1.2s .25s cubic-bezier(.2,.7,.2,1) both, float 8s 1.6s ease-in-out infinite; }
+  .hero-shot::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,.35) 50%, transparent 65%); transform: translateX(-120%); animation: sweep 7s 2.2s ease-in-out infinite; }
+  .hero .cta .btn:not(.btn-ghost) { animation: pulse 3.4s 2s ease-out infinite; }
+  @keyframes rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+  @keyframes shot-in { from { opacity: 0; transform: perspective(1400px) translateX(60px) rotateY(-16deg); } to { opacity: 1; transform: perspective(1400px) rotateY(-6deg); } }
+  @keyframes float { 0%, 100% { transform: perspective(1400px) rotateY(-6deg) translateY(0); } 50% { transform: perspective(1400px) rotateY(-4deg) translateY(-10px); } }
+  @keyframes sweep { 0%, 70% { transform: translateX(-120%); } 100% { transform: translateX(120%); } }
+  @keyframes pulse { 0% { box-shadow: 0 6px 18px rgba(232,84,47,.35), 0 0 0 0 rgba(232,84,47,.45); } 70%, 100% { box-shadow: 0 6px 18px rgba(232,84,47,.35), 0 0 0 16px rgba(232,84,47,0); } }
+
+  /* Icônes des fonctionnalités : petit rebond à l'apparition */
+  .feature.reveal .ico { transform: scale(.6) rotate(-8deg); opacity: 0; transition: transform .6s cubic-bezier(.3,1.6,.5,1), opacity .4s; transition-delay: calc(var(--d, 0s) + .25s); }
+  .feature.reveal.in .ico { transform: none; opacity: 1; }
+
+  /* Avant / après : les connexions se dessinent ; des requêtes circulent dans le schéma « après » */
+  .arch-panel path { stroke-dasharray: 700; stroke-dashoffset: 700; }
+  .arch-panel.in path { animation: draw 1.6s cubic-bezier(.4,0,.2,1) forwards; }
+  .arch-before.in .lines-bad path:nth-child(3n+1) { animation-delay: .1s } .arch-before.in .lines-bad path:nth-child(3n+2) { animation-delay: .35s } .arch-before.in .lines-bad path:nth-child(3n) { animation-delay: .6s }
+  .arch-after.in .lines-out path { animation-delay: .7s; }
+  .arch-before .warn { opacity: 0; } .arch-before.in .warn { animation: rise .7s 1.6s both, blink 2.6s 2.4s ease-in-out infinite; }
+  .arch-after .gw rect { transform-box: fill-box; transform-origin: center; }
+  .arch-after.in .gw rect { animation: glow 2.8s 1.4s ease-in-out infinite; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .55; } }
+  @keyframes glow { 0%, 100% { filter: drop-shadow(0 0 0 rgba(47,125,250,0)); } 50% { filter: drop-shadow(0 0 12px rgba(47,125,250,.55)); } }
+
+  /* Les 4 étapes s'allument tour à tour, en boucle */
+  .steps.play li { animation: step-on 6s ease-in-out infinite; }
+  .steps.play li:nth-child(2) { animation-delay: 1.5s } .steps.play li:nth-child(3) { animation-delay: 3s } .steps.play li:nth-child(4) { animation-delay: 4.5s }
+  .steps.play li b { animation: step-dot 6s ease-in-out infinite; animation-delay: inherit; }
+  @keyframes step-on { 0%, 30%, 100% { border-color: var(--line); box-shadow: none; transform: none; } 6%, 22% { border-color: var(--orange); box-shadow: 0 14px 34px rgba(232,84,47,.16); transform: translateY(-4px); } }
+  @keyframes step-dot { 0%, 30%, 100% { transform: none; } 8%, 20% { transform: scale(1.15); } }
+
+  /* Frise du pilote : la ligne se remplit, les semaines s'allument */
+  .timeline.play::after { animation: fill-line 2.6s .2s cubic-bezier(.4,0,.2,1) forwards; }
+  .timeline li::before { transform: scale(0); transition: transform .5s cubic-bezier(.3,1.6,.5,1); }
+  .timeline.play li::before { transform: scale(1); }
+  .timeline.play li:nth-child(1)::before { transition-delay: .2s } .timeline.play li:nth-child(2)::before { transition-delay: .9s }
+  .timeline.play li:nth-child(3)::before { transition-delay: 1.6s } .timeline.play li:nth-child(4)::before { transition-delay: 2.3s }
+  @keyframes fill-line { to { width: 100%; } }
+
+  /* Bandeau de contact : dégradé qui ondule lentement */
+  .contact { background-size: 180% 180%; animation: drift 14s ease-in-out infinite alternate; }
+  @keyframes drift { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+}
+@media (prefers-reduced-motion: no-preference) and (max-width: 980px) {
+  .hero-shot { animation: rise .9s .3s cubic-bezier(.2,.7,.2,1) both; }
+}
+.hero { overflow: hidden; } /* la capture qui arrive de la droite ne fait jamais déborder la page */
