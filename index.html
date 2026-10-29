@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="assets/style.css">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"SQLVault Gateway","applicationCategory":"SecurityApplication",
-   "operatingSystem":"Linux (Docker)","description":"Passerelle d'accès sécurisé aux bases de données bancaires : masquage, double validation, rapports planifiés, journal d'audit chaîné.",
+   "operatingSystem":"Linux (Docker)","description":"Passerelle d'accès sécurisé aux bases de données bancaires : masquage, double validation, rapports paramétrés en Excel ou PDF, journal d'audit chaîné.",
    "publisher":{"@type":"Organization","name":"DEF TECH 2.0","email":"sqlvaultgateway@gmail.com"},"url":"https://sqlvaultgateway.github.io/","inLanguage":"fr"}
   </script>
 </head>
@@ -155,7 +155,7 @@
       <article class="feature">
         <span class="ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5M10 20c0-3 3-5 6-5s6 2 6 5"/></svg></span>
         <h3>Aucune modification sans double validation</h3>
-        <p>Toute correction de données devient une demande justifiée, approuvée par une deuxième personne avant d'être exécutée. Personne ne valide sa propre demande.</p>
+        <p>Toute correction de données, comme tout nouvel index ou nouvelle table pour optimiser une base, devient une demande justifiée, approuvée par une deuxième personne avant d'être exécutée. Personne ne valide sa propre demande.</p>
       </article>
       <article class="feature">
         <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></span>
@@ -164,8 +164,8 @@
       </article>
       <article class="feature">
         <span class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
-        <h3>Des rapports automatiques et sécurisés</h3>
-        <p>Les extractions envoyées à la main sont remplacées par des rapports Excel planifiés, validés par un responsable, toujours masqués, et téléchargeables par les collègues autorisés.</p>
+        <h3>Des rapports à la demande ou automatiques</h3>
+        <p>Les extractions faites à la main sont remplacées par des rapports avec paramètres (compte, période…), en Excel ou en PDF, exécutés à la demande ou planifiés, validés par un responsable et toujours masqués.</p>
       </article>
       <article class="feature">
         <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
@@ -295,7 +295,7 @@
   <div class="wrap">
     <p class="kicker">Gratuit · étudiants et développeurs</p>
     <h2>SQLVault Studio, le client SQL gratuit pour apprendre et développer</h2>
-    <p class="sub">Complet et sans limite, installé sur votre ordinateur. MySQL, MariaDB, PostgreSQL, SQL Server, Oracle et SQLite, un serveur MySQL ou PostgreSQL en un clic, et une base d'exemple bancaire pour s'exercer.</p>
+    <p class="sub">Complet et sans limite, installé sur votre ordinateur. MySQL, MariaDB, PostgreSQL, SQL Server, Oracle et SQLite, un serveur MySQL ou PostgreSQL en un clic, et une base d'exemple bancaire pour s'exercer. Développé en Go : léger (moins de 30 Mo) et rapide.</p>
     <figure class="studio-shot"><img loading="lazy" src="assets/img/studio.jpg" alt="SQLVault Studio : une requête sur la base d'exemple Banque Téranga" width="1400" height="836"></figure>
     <div class="docs">
       <a class="doc" href="https://github.com/sqlvaultgateway/sqlvault-studio/releases/latest" rel="noopener"><span class="pdf">Windows</span><strong>Windows 10 et 11</strong><small>Installateur Suivant / Suivant, sans droits administrateur</small></a>
@@ -324,9 +324,10 @@
     <h2>Vos questions, nos réponses</h2>
     <details><summary>Faut-il installer quelque chose sur les postes de travail ?</summary><p>Non. Un navigateur récent suffit. SQLVault Gateway est installé sur un serveur de la banque et s'utilise en HTTPS.</p></details>
     <details><summary>Nos données sortent-elles de la banque ?</summary><p>Non. L'outil est hébergé dans votre infrastructure, et DEF TECH n'a pas besoin d'accéder à vos données, y compris pendant le pilote.</p></details>
+    <details><summary>Peut-on créer des index ou des tables pour optimiser une base ?</summary><p>Oui, sur les bases où la banque l'autorise. Créer une table ou un index, ajouter une colonne ou recalculer les statistiques passe par la même double validation qu'une modification, et s'exécute sans bloquer la production : si la table est occupée, le changement est abandonné au lieu de faire attendre les utilisateurs. Supprimer une table, vider ou modifier une colonne reste toujours refusé.</p></details>
     <details><summary>Quelles bases de données sont prises en charge ?</summary><p>Oracle, SQL Server, PostgreSQL, MySQL et MariaDB, avec ou sans chiffrement TLS. Le même écran et les mêmes règles servent pour toutes.</p></details>
     <details><summary>Est-ce que l'outil ralentit les requêtes ?</summary><p>L'analyse et le masquage ajoutent quelques millisecondes. Les grands résultats sont lus en flux, et l'export complet est produit côté serveur.</p></details>
-    <details><summary>Que se passe-t-il pour les administrateurs de bases (DBA) ?</summary><p>Les évolutions de structure et l'accès d'urgence passent par des circuits dédiés et tracés (bastion, coffre-fort à mots de passe). La note DSI / RSSI décrit le dispositif complet.</p></details>
+    <details><summary>Que se passe-t-il pour les administrateurs de bases (DBA) ?</summary><p>Les optimisations courantes (index, tables de travail, statistiques) peuvent passer par SQLVault Gateway, avec double validation. Les migrations applicatives et l'accès d'urgence passent par des circuits dédiés et tracés (bastion, coffre-fort à mots de passe). La note DSI / RSSI décrit le dispositif complet.</p></details>
     <details><summary>SQLVault Gateway convient-il aux prestataires de paiement et aux fintechs ?</summary><p>Oui. Conçu pour les banques, il répond aux mêmes besoins chez les prestataires de paiement (PSP), les établissements de monnaie électronique et les fintechs : données de cartes et de comptes masquées, modifications validées à quatre yeux, preuves d'accès pour les audits et les régulateurs.</p></details>
     <details><summary>Comment se déroule un pilote ?</summary><p>Quatre semaines sur une base de recette, avec 5 à 10 utilisateurs et des critères de réussite fixés dès le premier jour avec votre DSI et votre RSSI.</p></details>
   </div>

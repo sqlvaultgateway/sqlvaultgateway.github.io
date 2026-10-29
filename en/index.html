@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="../assets/style.css">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"SQLVault Gateway","applicationCategory":"SecurityApplication",
-   "operatingSystem":"Linux (Docker)","description":"Secure access gateway for banking databases: masking, dual approval, scheduled reports, chained audit log.",
+   "operatingSystem":"Linux (Docker)","description":"Secure access gateway for banking databases: masking, dual approval, parameterised reports in Excel or PDF, chained audit log.",
    "publisher":{"@type":"Organization","name":"DEF TECH 2.0","email":"sqlvaultgateway@gmail.com"},"url":"https://sqlvaultgateway.github.io/en/","inLanguage":"en"}
   </script>
 </head>
@@ -155,7 +155,7 @@
       <article class="feature">
         <span class="ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5M10 20c0-3 3-5 6-5s6 2 6 5"/></svg></span>
         <h3>No change without a second approval</h3>
-        <p>Every data correction becomes a justified request, approved by a second person before it runs. Nobody approves their own request.</p>
+        <p>Every data correction, like every new index or table to optimise a database, becomes a justified request, approved by a second person before it runs. Nobody approves their own request.</p>
       </article>
       <article class="feature">
         <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></span>
@@ -164,8 +164,8 @@
       </article>
       <article class="feature">
         <span class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
-        <h3>Automated, secure reports</h3>
-        <p>Hand-made extracts are replaced by scheduled Excel reports, approved by a manager, always masked, and downloadable by authorised colleagues.</p>
+        <h3>Reports on demand or on schedule</h3>
+        <p>Hand-made extracts are replaced by reports with parameters (account, period…), in Excel or PDF, run on demand or on schedule, approved by a manager and always masked.</p>
       </article>
       <article class="feature">
         <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
@@ -295,7 +295,7 @@
   <div class="wrap">
     <p class="kicker">Free · students and developers</p>
     <h2>SQLVault Studio, the free SQL client for learning and development</h2>
-    <p class="sub">Complete and unlimited, installed on your computer. MySQL, MariaDB, PostgreSQL, SQL Server, Oracle and SQLite, a one-click MySQL or PostgreSQL server, and a sample banking database to practise on.</p>
+    <p class="sub">Complete and unlimited, installed on your computer. MySQL, MariaDB, PostgreSQL, SQL Server, Oracle and SQLite, a one-click MySQL or PostgreSQL server, and a sample banking database to practise on. Built in Go: lightweight (under 30 MB) and fast.</p>
     <figure class="studio-shot"><img loading="lazy" src="../assets/img/studio.jpg" alt="SQLVault Studio: a query on the Banque Téranga sample database" width="1400" height="836"></figure>
     <div class="docs">
       <a class="doc" href="https://github.com/sqlvaultgateway/sqlvault-studio/releases/latest" rel="noopener"><span class="pdf">Windows</span><strong>Windows 10 and 11</strong><small>Next / Next installer, no administrator rights</small></a>
@@ -324,9 +324,10 @@
     <h2>Your questions, answered</h2>
     <details><summary>Do we need to install anything on workstations?</summary><p>No. A recent browser is enough. SQLVault Gateway is installed on a server inside the bank and used over HTTPS.</p></details>
     <details><summary>Does our data leave the bank?</summary><p>No. The tool is hosted in your infrastructure, and DEF TECH does not need access to your data, including during the pilot.</p></details>
+    <details><summary>Can we create indexes or tables to optimise a database?</summary><p>Yes, on the databases where the bank allows it. Creating a table or an index, adding a column or refreshing statistics goes through the same dual approval as a data change, and runs without blocking production: if the table is busy, the change is abandoned instead of making users wait. Dropping a table, emptying it or altering a column is always refused.</p></details>
     <details><summary>Which databases are supported?</summary><p>Oracle, SQL Server, PostgreSQL, MySQL and MariaDB, with or without TLS encryption. The same screen and the same rules apply to all of them.</p></details>
     <details><summary>Does the tool slow queries down?</summary><p>Analysis and masking add a few milliseconds. Large results are streamed, and full exports are produced on the server.</p></details>
-    <details><summary>What about database administrators (DBAs)?</summary><p>Schema changes and emergency access go through dedicated, recorded channels (bastion host, password vault). The IT / CISO note describes the full set-up.</p></details>
+    <details><summary>What about database administrators (DBAs)?</summary><p>Routine optimisations (indexes, work tables, statistics) can go through SQLVault Gateway, with dual approval. Application migrations and emergency access go through dedicated, recorded channels (bastion host, password vault). The IT / CISO note describes the full set-up.</p></details>
     <details><summary>Is SQLVault Gateway suitable for payment providers and fintechs?</summary><p>Yes. Designed for banks, it meets the same needs at payment service providers (PSPs), e-money institutions and fintechs: card and account data masked, changes approved by a second person, proof of access for audits and regulators.</p></details>
     <details><summary>How does a pilot work?</summary><p>Four weeks on a test database, with 5 to 10 users and success criteria agreed on day one with your IT department and your CISO.</p></details>
   </div>
